@@ -12,7 +12,7 @@ export async function fetchPost() {
   const posts = [];
   for (const key in response.data) {
     const postObj = {
-      id: response.data[key]._id,
+      id: key,
       name: response.data[key].name,
       title: response.data[key].title,
       text: response.data[key].text,
@@ -20,7 +20,7 @@ export async function fetchPost() {
       date: response.data[key].date,
       country: response.data[key].country,
     };
-    posts.push(postObj);
+    posts.unshift(postObj);
   }
 
   return posts;

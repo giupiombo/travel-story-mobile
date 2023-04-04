@@ -1,14 +1,18 @@
-import { useContext } from 'react';
-import { Text } from 'react-native';
+import { useContext, useLayoutEffect } from 'react';
 import { PostsContext } from '../store/posts-context';
+import PostDetailOutput from '../components/PostDetail/PostDetailOutput';
 
-const PostDetail = ({ route }) => {
+const PostDetail = ({ route, navigation }) => {
   const postsCtx = useContext(PostsContext);
 
   const postId = route.params.postId;
-  // const selectedPost = MEALS.find((meal) => meal.id === mealId);
+  const selectedPost = postsCtx.posts.find((post) => post.id === postId);
 
-  return <Text>Post Detail page</Text>;
+  useLayoutEffect(() => {
+    navigation.setOptions({ title: selectedPost.country });
+  }, [navigation]);
+
+  return <PostDetailOutput selectedPost={selectedPost} />;
 };
 
 export default PostDetail;

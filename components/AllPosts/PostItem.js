@@ -14,7 +14,7 @@ const PostItem = ({ id, image, title, name }) => {
       <Image style={styles.image} source={{ uri: image }} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.name}>by: {name}</Text>
+        <Text style={styles.author}>by: {name}</Text>
       </View>
     </Pressable>
   );
@@ -44,10 +44,12 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: 18,
+    letterSpacing: 2,
   },
   author: {
     marginTop: 4,
     fontStyle: 'italic',
     fontSize: 12,
+    letterSpacing: 2,
   },
 });

@@ -22,7 +22,7 @@ function PostsContextProvider({ children }) {
   }, []);
 
   function addPost(post) {
-    setPostsList((currentPosts) => [...currentPosts, post]);
+    setPostsList((currentPosts) => [post, ...currentPosts]);
   }
 
   const value = {

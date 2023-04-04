@@ -1,4 +1,4 @@
-import { FlatList } from 'react-native';
+import { FlatList, Text } from 'react-native';
 import PostItem from './PostItem';
 
 function renderPostItem(itemData) {
